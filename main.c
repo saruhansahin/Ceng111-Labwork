@@ -183,6 +183,65 @@ int lab4_4(void){
     }
     return 0;
 }
+int lab5_1(void){
+    float w,d;
+    printf("Enter weight and distance:");
+    scanf("%f %f",&w,&d);
+    if(w<=7&&w>0){
+        if(d<5&&d>0){
+        printf("Cost of the shipping: %.2f",w*d);
+        }else if(d<=10&&d>=5){
+            printf("Cost of the shipping: %.2f",w*d*3);
+        }else if(d>10){
+            printf("Cost of the shipping: %.2f",w*d*7.5);
+        }else{
+            printf("Enter a valid distance!");
+        }
+    }else{
+        printf("Enter weight between 0 and 7!");
+    }
+    return 0;
+}
+int lab5_2(void){
+    int a,b,c;
+    float d,x,y;
+    printf("Enter the indices of the equation (ax^2 + b^x + c):");
+    scanf("%d %d %d",&a,&b,&c);
+    d=(b*b)-(4*a*c);
+    if(d>0){
+        x=((-b)+(sqrt(d)))/(2*a);
+        y=((-b)-(sqrt(d)))/(2*a);
+        printf("The roots of the equation (%dx^2) + (%dx) + (%d) are: %.2f and %.2f.",a,b,c,x,y);
+    }else{
+        printf("The discriminant value is not greater than 0.");
+    }
+    return 0;
+}
+int lab5_3(void){
+    int a;
+    printf("Enter a value:");
+    scanf("%d",&a);
+    if(a%7==0&&a%50==0){
+        printf("%d is divisible by both 7 and 50.",a);
+    }else{
+        printf("%d is not divisible by both 7 and 50.", a);
+    }
+    return 0;
+}
+int lab5_4(void){
+    float t,k;
+    printf("Enter a temperature value in terms of Fahrenheit:");
+    scanf("%f",&t);
+    k = (t + 459.67)*(5.0/9);
+    if(abs(k)==0.00){
+        printf("%.2f Fahrenheit equals to %.2f Kelvin and its right at absolute zero.",t ,k);
+    }else if (k>0){
+        printf("%.2f Fahrenheit equals to %.2f Kelvin and its above absolute zero.",t,k);
+    }else {
+        printf("%.2f is not a valid temperature!",t);
+    }
+    return 0;
+}
 int main(void) {
 /*write function here-->*/
     // example --> lab4_4();
