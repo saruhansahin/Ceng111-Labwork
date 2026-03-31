@@ -242,6 +242,111 @@ int lab5_4(void){
     }
     return 0;
 }
+int lab6_1(void){
+    int x,n,b;
+    int a=0;
+    int s=0;
+    printf("Enter a number: ");
+    scanf("%d",&x);
+    n=x;
+    
+    int t = x;
+    while(t!=0){
+        t=t/10;
+        a=a+1;
+    }
+    t=x;
+    while(t!=0){
+        b=t%10;
+        s+=pow(b,a);
+        t=t/10;
+    }
+
+    if(s==n){
+        printf("%d is an Armstrong number.", x);
+    }else{
+        printf("%d is not an Armstrong number.", x);
+    }
+    
+    return 0;
+}
+int lab6_2(void){
+    int x,y,z,a,b;
+    printf("Enter two numbers: ");
+    scanf("%d %d",&x,&y);
+    if(x>y){
+        z = x;
+    }else {
+        z=y;
+    }
+    while(1){
+        if(z%x==0 && z%y ==0){
+            printf("LCM of %d and %d is: %d",x,y,z);
+            break;
+        }
+        z = z+1;
+    }
+    return 0;
+}
+int lab6_3(void){
+    int binary, bin;
+    int a,b,c,d;
+    printf("Enter a binary number: ");
+    scanf("%d",&binary);
+    bin = binary;
+    d=binary%10;
+    binary/=10;
+    c=binary%10;
+    binary/=10;
+    b=binary%10;
+    binary/=10;
+    a=binary%10;
+    binary/=10;
+    printf("%d in binary, equals to %d in decimal.",bin, (a*8)+(b*4)+(c*2)+d);
+    return 0;
+}
+int lab6_4(void){
+    int n;
+    float max,min,x;
+    printf("Enter N:");
+    scanf("%d",&n);
+    printf("Enter %d numbers:",n);
+    scanf("%f",&x);
+    max=x;
+    min=x;
+    while(n>1){
+        scanf("%f",&x);
+        n--;
+
+        if(max<x ){
+            max=x;
+        }
+        if(min>x){
+            min=x;
+        }
+        
+    }
+    printf("Smallest Value: %.2f \nLargest Value: %.2f",min,max);
+    return 0;
+}
+int lab6_5(void){
+    int x,sum=0,t;
+    int a;
+    printf("Enter a number: ");
+    scanf("%d",&x);
+    t=x;
+    while (x!=0){
+        a=x%10;
+        x/=10;
+        sum=sum+a;
+        if(x<1){
+            break ;
+        }
+    }
+
+    printf("Sum of the digits of the number %d is: %d",t, sum);
+    return 0;
+}
 int main(void) {
 /*write function here-->*/
     // example --> lab4_4();
