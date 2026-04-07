@@ -347,6 +347,83 @@ int lab6_5(void){
     printf("Sum of the digits of the number %d is: %d",t, sum);
     return 0;
 }
+int lab7_1(void){
+    int x,t,i;
+    printf("Enter a number:");
+    scanf("%d",&x);
+    t=x;
+    printf("Prime factors of %d are:",x);
+    for(i=2;i<=t;i++){
+        while(t%i==0){
+            printf(" %d",i);
+            t=t/i;
+        }
+    }
+    return 0;
+}
+int lab7_2(void){
+    int n,a,b;
+    printf("Enter n:");
+    scanf("%d",&n);
+    for(a=1;a<=n;a++){
+        for(b=1;b<=n*a;b++){
+            if(a==b){
+                printf(" %d",a);
+            }
+            if(n>b){
+                printf(" 0");
+            }
+            
+            
+        }
+        printf("\n");
+    }
+    return 0;
+}
+int lab7_3(void){
+    int up,low,a,b,sum;
+    printf("Enter lower bound:");
+    scanf("%d",&low);
+    printf("Enter upper bound:");
+    scanf("%d",&up);
+    printf("Perfect Numbers between %d and %d are:",low,up);
+    for(a=1;a<up;a++){
+        sum=0;
+            for(b=1;b<a;b++){
+                if(a%b==0){
+                    sum +=b;
+                }
+            }
+            if(sum==a&&a!=0){
+                printf(" %d",a);
+            }
+    }
+    return 0;
+}
+int lab7_4(void){
+    int x,t,i,sum=0,f,ti;
+    printf("Enter a number:");
+    scanf("%d",&x);
+    t=x;
+    while(t>0){
+        i = t%10;
+    
+        ti=i;
+        f=1;
+        while(ti>0){
+            f = f*ti;
+            ti--;
+        }
+        sum = sum + f;
+        t=t/10;
+    }
+    if(sum == x){
+        printf("%d is a Strong Number",x);
+    }else {
+        printf("%d is not a Strong Number",x);
+    }
+    return 0;
+}
 int main(void) {
 /*write function here-->*/
     // example --> lab4_4();
