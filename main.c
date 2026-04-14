@@ -424,6 +424,103 @@ int lab7_4(void){
     }
     return 0;
 }
+int lab8_1(void){
+    int n,a,b;
+    printf("Enter n:");
+    scanf("%d",&n);
+    for(a=1;a<=n;a++){
+        for(b=1;b<=a;b++){
+            if(b%2!=0){
+                printf("O ");
+            }else{
+                printf("E ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+int lab8_2(void){
+    int n,a=1,b=2,t;
+    char x=' ';
+    printf("Enter n:");
+    scanf("%d",&n);
+    t=n;
+    
+    while(a<=n){
+        if(a==1||a==n){
+        
+            while(t>0){
+                printf("%d",a);
+                t--;
+            }
+        }else if(a>1 && a<n){
+            printf("%d",a);
+            while(b<n){
+                printf("%c",x);
+                b++;
+            }
+            printf("%d",a);
+            b=2;
+        }
+        printf("\n");
+        a++;
+        t=n;
+    }
+    return 0;
+}
+int lab8_3(void){
+    int low,up,a,tl,sum=0,x=0,t,y;
+    printf("Enter lower bound: ");
+    scanf("%d",&low);
+    tl=low;
+    printf("Enter upper bound: ");
+    scanf("%d",&up);
+    printf("Power-Sum Mirror Numbers between %d and %d are:",low,up);
+    
+    while(tl<up){
+        a=0;
+        t=tl;
+        y=tl;
+        while(y>=1){
+            y=y/10;
+            a++;
+        }
+        while(t>=1){
+            x=t%10;
+            t=t/10;
+            sum = pow(x,a) + sum;
+            a--;
+    }
+        if(sum==tl){
+            printf("%d ",tl);
+        }
+    sum=0;
+    tl++;
+    }
+    return 0;
+}
+int lab8_4(void){
+    int n,a=1,b=1,t=1;
+    printf("Enter n:");
+    scanf("%d",&n);
+    while(b<=n){
+        while(a<=t){
+            printf("%d",a);
+            a++;
+        }
+        a-=2;
+        while(a>0){
+            printf("%d",a);
+            a--;
+        }
+        a=1;
+        t++;
+        b++;
+        printf("\n");
+    }
+    return 0;
+}
 int main(void) {
 /*write function here-->*/
     // example --> lab4_4();
