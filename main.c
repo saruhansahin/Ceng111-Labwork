@@ -521,6 +521,108 @@ int lab8_4(void){
     }
     return 0;
 }
+int lab9_1(void){
+    int n,x,a,b,sum,t=1;
+    printf("Enter n:");
+    scanf("%d",&n);
+    printf("Enter %d numbers:",n);
+    while(n>0){
+        scanf("%d",&x);
+        if(t==1){
+            printf("Abundant numbers out of the entered values are:");
+            t--;
+        }
+        a=x;
+        b=1;
+        sum=0;
+        while(b<a){
+            if(a%b==0){
+                sum+=b;
+            }
+            b++;
+        }
+        if(sum>x){
+        printf(" %d",x);
+    }
+        n--;
+    }
+    
+    return 0;
+}
+int lab9_2(void){
+    int n,t,a,b,c;
+    printf("Enter n:");
+    scanf("%d",&n);
+    a=n;
+    while(a>0){
+        printf("*");
+        a--;
+    }
+    printf("\n");
+    t=n-2;
+    while(t>0){
+        b=t;
+        while(b>0){
+            printf(" ");
+            b--;
+        }
+        printf("*");
+        t--;
+        printf("\n");
+    }
+    c=n;
+    while(c>0){
+        printf("*");
+        c--;
+    }
+    return 0;
+}
+int lab9_3(void){
+    int n,x=0,t,a;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    t=n;
+    while(t>=1){
+        a=t%10;
+        x+=a;
+        t/=10;
+    }
+    if(n%x==0){
+        printf("%d is a Harshad Number.",n);
+    }else{
+        printf("%d is not a Harshad Number.",n);
+    }
+    return 0;
+}
+int lab9_4(void){
+    int n,x,t,a=0,b,c,d;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    t=n;
+    c=n-1;
+    while(t>0){
+        x=n;
+        b=a;
+        d=c;
+        while(b>0){
+            printf("0 ");
+            b--;
+        }
+        while(x==n){
+            printf("2 ");
+            x--;
+        }
+        while(d>0){
+            printf("1 ");
+            d--;
+        }
+        t--;
+        a++;
+        c--;
+        printf("\n");
+    }
+    return 0;
+}
 int main(void) {
 /*write function here-->*/
     // example --> lab4_4();
