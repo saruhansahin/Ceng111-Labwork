@@ -623,6 +623,117 @@ int lab9_4(void){
     }
     return 0;
 }
+int lab10_1(void){
+    int up, low,sum,div,x;
+    printf("Enter lower bound:");
+    scanf("%d",&low);
+    printf("Enter upper bound:");
+    scanf("%d",&up);
+    x=low;
+    for(x=low;x<=up;x++){
+        sum=0;
+        for(div=1;div<x;div++){
+            if(x%div==0){
+                sum+=div;
+            }
+        }
+        if(sum<x){
+            printf("%d ",x);
+        }
+    }
+    return 0;
+}
+int lab10_2(void){
+    int n,x,y;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    for(x=1;x<=n;x++){
+        y=x-1;
+        if(x*y==n){
+            printf("%d is a Pronic Number",n);
+            break;
+        }else if(x==n && x*y!=n){
+            printf("%d is not a Pronic Number",n);
+        }
+    }
+    return 0;
+}
+int lab10_3(void){
+    int n,i,j,x,y;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    
+    for(j=1;j<n;j++){
+        x=0;
+        i=1;
+        y=0;
+        
+        for(x=1;x<=j;i+=x){
+            if(y>=n){
+                break;
+            }
+            printf("%d ",i);
+            x++;
+            y++;
+        }
+        printf("\n");
+        
+    }
+    for(j=n;j>0;j--){
+        x=0;
+        i=1;
+        y=0;
+        
+        for(x=1;x<=j;i+=x){
+            if(y>=n){
+                break;
+            }
+            printf("%d ",i);
+            x++;
+            y++;
+        }
+        
+        printf("\n");
+        
+    }
+    return 0;
+}
+int lab10_4(void){
+    int n,x,y,sq,t;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    sq=n*n;
+    for(t=n;t>0;t/=10){
+        x=t%10;
+        y=sq%10;
+        sq/=10;
+        if(x!=y){
+            printf("%d is not an Automorphic number",n);
+            return 0;
+        }if(t<10){
+            printf("%d is an Automorphic number",n);
+        }
+    }
+    return 0;
+}
+int lab10_4_v2(void){
+    int n,x=1,sq,t,count=0;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    sq=n*n;
+    for(t=n;t>0;count++){
+        t/=10;
+    }
+    for(int i=0;i<count;i++){
+        x *= 10;
+    }
+    if(sq % x == n){
+        printf("%d is an Automorphic number",n);
+    } else{
+        printf("%d is not an Automorphic number",n);
+    }
+    return 0;
+}
 int main(void) {
 /*write function here-->*/
     // example --> lab4_4();
